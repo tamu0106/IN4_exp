@@ -2,17 +2,16 @@
 
 double **make_filter(int size, int type)
 {
-	int i, j, dis, val;
-	double **pattern;
+	int i, j, dis;
+	double **pattern, val;
 
 	//printf("size:%d\n", size);
 
 	pattern = malloc(size * sizeof(double *));
-	for (i=0;i<size;i++)
+	for (i = 0; i < size; i++)
 	{
 		pattern[i] = malloc(size * sizeof(double));
 	}
-
 	//printf("malloc\n");
 
 	for (i = 0; i < size; i++)
@@ -28,7 +27,7 @@ double **make_filter(int size, int type)
 			case 0:
 				//smooth_ave
 				//val = fil_smooth_ave(dis);
-				val = 1/9;
+				val = 1 / 9.0;
 				break;
 
 			case 8:

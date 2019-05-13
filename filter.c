@@ -1,6 +1,6 @@
 #include "nubesuko.h"
 
-gray **filterling(int **image, int cols, int rows, int filter_size, int **weight)
+gray **filterling(int **image, int cols, int rows, int filter_size, double **weight)
 {
 
 	gray **filtered_img;
@@ -11,14 +11,14 @@ gray **filterling(int **image, int cols, int rows, int filter_size, int **weight
 	{
 		for (j = 0; j < filter_size; j++)
 		{
-			printf("%d ", weight[i][j]);
+			printf("%f ", weight[i][j]);
 		}
 		printf("\n");
 	}
 
 	filtered_img = malloc_matrix(rows, cols);
 
-	printf("uo1\n");
+	intf("uo1\n");pr
 	for (y = 1; y < cols - 1; y++)
 	{
 		for (x = 1; x < rows - 1; x++)
@@ -27,23 +27,17 @@ gray **filterling(int **image, int cols, int rows, int filter_size, int **weight
 			for (i = -1; i < filter_size - 1; i++)
 			{
 				for (j = -1; j < filter_size - 1; j++)
-				{ 
+				{
 					pixcel_value = pixcel_value + weight[i + 1][j + 1] * image[y + i][x + j];
 				}
 			}
+			filtered_img[y][x] = pixcel_value;
 		}
 	}
 
 	printf("uo2\n");
 	nube = max_value / 255;
 
-	for (y = 0; y < cols; y++)
-	{
-		for (x = 0; x < rows; x++)
-		{
-			filtered_img[x][y] = 0;
-		}
-	}
 	printf("uo3\n");
 	//正規化
 	for (y = 1; y < cols - 1; y++)
