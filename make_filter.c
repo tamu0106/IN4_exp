@@ -1,0 +1,71 @@
+#include "nubesuko.h"
+
+gray **make_filter(int size, int type)
+{
+	int i, j, dis, val;
+	gray **pattern;
+
+	//printf("size:%d\n", size);
+
+	pattern = malloc_matrix(size, size);
+
+	//printf("malloc\n");
+
+	for (i = 0; i < size; i++)
+	{
+		//printf("%d ",i);
+		for (j = 0; j < size; j++)
+		{
+			//printf("%d\n", j);
+			dis = abs(i - size / 2) + abs(j - size / 2); //中心からの距離
+			//printf("dis:%d\n", dis);
+			switch (type)
+			{
+			case 0:
+				//smooth_ave
+				//val = fil_smooth_ave(dis);
+				val = 1;
+				break;
+
+			case 8:
+				//dif_lap
+				//val = fil_dif_lap(dis);
+				if (dis == 0)
+				{
+					val = -8;
+				}
+				else
+				{
+					val = 1;
+				}
+				break;
+
+			case 16:
+				//sharpening
+				//val = fil_sharp(dis);
+				if (dis == 0)
+				{
+					val = 5;
+				}
+				else if (dis == 1)
+				{
+					val = -1;
+				}
+				else
+				{
+					val = 0;
+				}
+				break;
+
+			default:
+				printf("filter type error.\n");
+				exit(-1);
+			}
+
+			//printf("val:%d\n",val);
+			pattern[i][j] = val;
+		}
+	}
+
+	return pattern;
+}
