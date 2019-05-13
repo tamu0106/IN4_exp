@@ -4,7 +4,8 @@ int main(int argc, char *argv[])
 {
 
   FILE *file1, *file2;
-  int filter_num, size, **array, cols, rows, maxval, i, j;
+  int filter_num, size, cols, rows, maxval, i, j;
+  double **array;
   gray **image, **answer;
 
   //画像の読み込み

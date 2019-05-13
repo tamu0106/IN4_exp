@@ -1,13 +1,17 @@
 #include "nubesuko.h"
 
-gray **make_filter(int size, int type)
+double **make_filter(int size, int type)
 {
 	int i, j, dis, val;
-	gray **pattern;
+	double **pattern;
 
 	//printf("size:%d\n", size);
 
-	pattern = malloc_matrix(size, size);
+	pattern = malloc(size * sizeof(double *));
+	for (i=0;i<size;i++)
+	{
+		pattern[i] = malloc(size * sizeof(double));
+	}
 
 	//printf("malloc\n");
 
@@ -24,7 +28,7 @@ gray **make_filter(int size, int type)
 			case 0:
 				//smooth_ave
 				//val = fil_smooth_ave(dis);
-				val = 1;
+				val = 1/9;
 				break;
 
 			case 8:
