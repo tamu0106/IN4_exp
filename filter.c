@@ -18,7 +18,6 @@ gray **filterling(int **image, int cols, int rows, int filter_size, double **wei
 
 	filtered_img = malloc_matrix(rows, cols);
 
-	intf("uo1\n");pr
 	for (y = 1; y < cols - 1; y++)
 	{
 		for (x = 1; x < rows - 1; x++)
@@ -35,15 +34,17 @@ gray **filterling(int **image, int cols, int rows, int filter_size, double **wei
 		}
 	}
 
-	printf("uo2\n");
-	nube = max_value / 255;
+	//printf("uo2\n");
+	//nube = max_value / 255;
 
-	printf("uo3\n");
+	//printf("uo3\n");
 	//正規化
 	for (y = 1; y < cols - 1; y++)
 	{
 		for (x = 1; x < rows - 1; x++)
 		{
+
+			/*
 			pixcel_value = 0.0;
 			for (i = -1; i < filter_size - 1; i++)
 			{
@@ -58,11 +59,26 @@ gray **filterling(int **image, int cols, int rows, int filter_size, double **wei
 						pixcel_value = 255;
 					}
 					filtered_img[y][x] = pixcel_value;
-					*/
 				}
 			}
+			*/
 		}
 	}
 
 	return filtered_img;
+}
+
+gray **mendako(int pattern)
+{
+	gray **xfiltered_img, **yfiltered_img;
+
+	if (pattern != 0)
+	{
+		xfiltered_img = filterling();
+		yfiltered_img = filterling();
+	}
+	else
+	{
+		filtered_img = filterling();
+	}
 }

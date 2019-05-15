@@ -35,12 +35,17 @@ double **make_filter(int size, int type)
 				//val = fil_dif_lap(dis);
 				if (dis == 0)
 				{
-					val = -8;
+					val = -4;
 				}
-				else
+				else if (dis == 1)
 				{
 					val = 1;
 				}
+				else
+				{
+					val = 0;
+				}
+
 				break;
 
 			case 16:
