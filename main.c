@@ -73,9 +73,7 @@ gray **malloc_matrix(int rows, int cols)
 
   for (i = 0; i < rows; i++)
   {
-
     matrix[i] = malloc(cols * sizeof(gray));
-    printf("%d\n", i);
   }
 
   return matrix;
