@@ -18,7 +18,7 @@ gray **filterling(int **image, int cols, int rows, int filter_size, double **wei
 
 	filtered_img = malloc_matrix(rows, cols);
 
-	intf("uo1\n");pr
+
 	for (y = 1; y < cols - 1; y++)
 	{
 		for (x = 1; x < rows - 1; x++)
