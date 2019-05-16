@@ -48,6 +48,37 @@ double **make_filter(int size, int type)
 
 				break;
 
+			case 9:
+				//dif_x
+				if (i == 0)
+				{
+					val = -1;
+				}
+				else if (i == 2)
+				{
+					val = 1;
+				}
+				else
+				{
+					val = 0;
+				}
+				break;
+
+			case 10:
+				//dif_y
+				if (j == 0)
+				{
+					val = -1;
+				}
+				else if (j == 2)
+				{
+					val = 1;
+				}
+				else
+				{
+					val = 0;
+				}
+
 			case 16:
 				//sharpening
 				//val = fil_sharp(dis);
