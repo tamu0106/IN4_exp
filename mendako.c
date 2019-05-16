@@ -3,29 +3,40 @@
 gray **mendako(int **image, int cols, int rows, int filter_size, int pattern)
 {
     int x, y;
-    double **weight;
-    gray **xfiltered_img, **yfiltered_img, **filtered_img;
+    double **weight, **xfiltered_img, **yfiltered_img, **tmp;
+    gray **filtered_img;
 
-    if (pattern != 0)
+    filtered_img = malloc_matrix(rows, cols);
+
+    if (pattern == 9)
     {
-        weight = make_filter(filter_size, pattern);
+        weight = make_filter(filter_size, 10);
         xfiltered_img = filterling(image, cols, rows, filter_size, weight);
 
-        weight = make_filter(filter_size, pattern);
+        weight = make_filter(filter_size, 9);
         yfiltered_img = filterling(image, cols, rows, filter_size, weight);
 
         for (y = 1; y < cols - 1; y++)
         {
             for (x = 1; x < rows - 1; x++)
             {
-                filtered_img[y][x] = hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
+                filtered_img[y][x] = (unsigned int)hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
             }
         }
+        printf("uooooo\n");
     }
     else
     {
         weight = make_filter(filter_size, pattern);
-        filtered_img = filterling(image, cols, rows, filter_size, weight);
+
+        tmp = filterling(image, cols, rows, filter_size, weight);
+        for (y = 1; y < cols - 1; y++)
+        {
+            for (x = 1; x < rows - 1; x++)
+            {
+                filtered_img[y][x] = (unsigned int)tmp[y][x];
+            }
+        }
     }
 
     return filtered_img;

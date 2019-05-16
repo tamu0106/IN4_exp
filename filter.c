@@ -3,9 +3,8 @@
 double **filterling(int **image, int cols, int rows, int filter_size, double **weight)
 {
 
-	gray **filtered_img;
 	int i, j, x, y, max_value = 0;
-	double nube, pixcel_value;
+	double nube, pixcel_value, **filtered_img;
 
 	for (i = 0; i < filter_size; i++)
 	{
@@ -16,7 +15,11 @@ double **filterling(int **image, int cols, int rows, int filter_size, double **w
 		printf("\n");
 	}
 
-	filtered_img = malloc_matrix(rows, cols);
+	filtered_img = malloc(rows * sizeof(double *));
+	for (i = 0; i < rows; i++)
+	{
+		filtered_img[i] = malloc(cols * sizeof(double));
+	}
 
 	for (y = 1; y < cols - 1; y++)
 	{

@@ -21,8 +21,6 @@ int main(int argc, char *argv[])
 
   image = pgm_readpgm(file1, &cols, &rows, &maxval);
   printf("read pbm\n");
-  printf("%d", cols);
-  printf("%d", rows);
   fclose(file1);
 
   //サイズの入力
@@ -38,19 +36,10 @@ int main(int argc, char *argv[])
   scanf("%d", &filter_num);
 
   //フィルタ処理
-  array = make_filter(size, filter_num);
+  answer = mendako(image, cols, rows, size, filter_num);
 
-  for (i = 0; i < size; i++)
-  {
-    for (j = 0; j < size; j++)
-    {
-      printf("%f ", array[i][j]);
-    }
-    printf("\n");
-  }
-
-  answer = filterling(image, cols, rows, size, array);
-  printf("うお\n");
+  //answer = filterling(image, cols, rows, size, array);
+  //printf("うお\n");
 
   // mono_view(answer, cols, rows, maxval);
   file2 = fopen("nubesuko.pgm", "wb");
