@@ -1,6 +1,6 @@
 #include "nubesuko.h"
 
-gray **filterling(int **image, int cols, int rows, int filter_size, double **weight, )
+gray **filterling(int **image, int cols, int rows, int filter_size, double **weight)
 {
 
 	gray **filtered_img;
@@ -34,10 +34,10 @@ gray **filterling(int **image, int cols, int rows, int filter_size, double **wei
 		}
 	}
 
-	//printf("uo2\n");
+	printf("uo2\n");
 	//nube = max_value / 255;
 
-	//printf("uo3\n");
+	printf("uo3\n");
 	//正規化
 	for (y = 1; y < cols - 1; y++)
 	{
@@ -65,31 +65,4 @@ gray **filterling(int **image, int cols, int rows, int filter_size, double **wei
 	}
 
 	return filtered_img;
-}
-
-gray **mendako(int **image, int cols, int rows, int filter_size, int pattern)
-{
-	int x, y;
-	double **weight;
-	gray **xfiltered_img, **yfiltered_img;
-
-	if (pattern != 0)
-	{
-		weight = make;
-		xfiltered_img = filterling(image, cols, rows, filter_size, );
-		yfiltered_img = filterling(image,cols,rows,filter_size,);
-		for (y = 1; y < cols - 1; y++)
-		{
-			for (x = 1; x < rows - 1; x++)
-			{
-				hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
-			}
-		}
-	}
-	else
-	{
-		filtered_img = filterling();
-	}
-
-
 }
