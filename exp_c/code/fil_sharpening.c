@@ -20,7 +20,7 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
         for (x = 1; x < rows - 1; x++)
         {
             tmp[y][x] = (tmp[y][x] * multi);
-            if (tmp[y][x] < 0)
+            if (tmp[y][x] <= 0)
             {
                 tmp[y][x] = 0;
             }
