@@ -47,6 +47,8 @@ double **filterling(int **image, int cols, int rows, int filter_size, double **w
 	}
 
 	printf("uo2\n");
+	printf("max:%f\n", max_value);
+	printf("min:%f\n", min_value);
 
 	return filtered_img;
 }
