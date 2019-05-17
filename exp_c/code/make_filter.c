@@ -71,11 +71,15 @@ double **make_filter(int size, int type, int sub_type)
 				//val = fil_dif_lap(dis);
 				if (dis == 0)
 				{
-					val = -8;
+					val = -4;
+				}
+				else if (dis == 1)
+				{
+					val = 1;
 				}
 				else
 				{
-					val = 1;
+					val = 0;
 				}
 				break;
 
@@ -84,11 +88,15 @@ double **make_filter(int size, int type, int sub_type)
 				//val = fil_sharp(dis);
 				if (dis == 0)
 				{
-					val = 9;
+					val = 5;
+				}
+				else if (dis == 1)
+				{
+					val = -1;
 				}
 				else
 				{
-					val = -1;
+					val = 0;
 				}
 				break;
 
