@@ -13,7 +13,7 @@ gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
     tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     multi = 255 / (maxval - minval);
-    correct = abs(minval * multi);
+    correct = fabs(minval * multi);
 
     for (y = 1; y < cols - 1; y++)
     {
