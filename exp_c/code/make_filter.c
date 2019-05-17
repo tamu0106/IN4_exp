@@ -98,6 +98,7 @@ double **make_filter(int size, int type, int sub_type)
 				{
 					val = 0;
 				}
+				break;
 
 			default:
 				printf("filter type error.\n");

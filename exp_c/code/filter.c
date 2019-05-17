@@ -4,7 +4,7 @@ double **filterling(int **image, int cols, int rows, int filter_size, double **w
 {
 
 	int i, j, x, y, max_value = 0;
-	double nube, pixcel_value, **filtered_img;
+	double maxval = 0.0, minval = 255.0, pixcel_value, **filtered_img;
 
 	for (i = 0; i < filter_size; i++)
 	{
@@ -34,6 +34,15 @@ double **filterling(int **image, int cols, int rows, int filter_size, double **w
 				}
 			}
 			filtered_img[y][x] = pixcel_value;
+			if (pixcel_value < minval)
+			{
+				minval = pixcel_value;
+			}
+
+			if (pixcel_value > max_value)
+			{
+				max_value = pixcel_value;
+			}
 		}
 	}
 
