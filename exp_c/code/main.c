@@ -4,8 +4,9 @@ int main(int argc, char *argv[])
 {
 
   FILE *file1, *file2;
-  int filter_num, size, cols, rows, maxval, i, j;
+  int pattern, size, cols, rows, maxval, i, j;
   double **array;
+  char filename[16];
   gray **image, **answer;
 
   //画像の読み込み
@@ -33,16 +34,22 @@ int main(int argc, char *argv[])
   printf("8.Differential_filter\n");
   printf("16.Sharpening_filter\n");
 
-  scanf("%d", &filter_num);
+  scanf("%d", &pattern);
 
   //フィルタ処理
-  answer = mendako(image, cols, rows, size, filter_num);
+  answer = mendako(image, cols, rows, size, pattern);
 
-  pritnf("ファイルに保存する?(y or n)\n");
-  scanf("%s",)
-  if()
+  printf("1.ファイルに保存\n");
+  printf("2.画面に表示\n");
+
+  scanf("%d", &pattern);
+
+  if (pattern == 1)
   {
-    file2 = fopen("nubesuko.pgm", "wb");
+    printf("ファイル名を入力してください\n");
+    scanf("%s", filename);
+
+    file2 = fopen(filename, "wb");
 
     pgm_writepgm(file2, answer, cols, rows, maxval, 1);
     fclose(file2);
