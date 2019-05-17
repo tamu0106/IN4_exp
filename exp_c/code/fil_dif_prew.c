@@ -9,10 +9,10 @@ gray fil_dif_prew(gray image, int cols, int rows, int filter_size)
     filtered_img = malloc_matrix(rows, cols);
 
     weight = make_filter(filter_size, 8, 0);
-    xfiltered_img = filterling(image, cols, rows, filter_size, weight);
+    xfiltered_img = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     weight = make_filter(filter_size, 8, 1);
-    yfiltered_img = filterling(image, cols, rows, filter_size, weight);
+    yfiltered_img = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     for (y = 1; y < cols - 1; y++)
     {
