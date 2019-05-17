@@ -101,7 +101,7 @@ double **make_filter(int size, int type, int sub_type)
 				break;
 
 			default:
-				printf("filter type error.\n");
+				printf("filter make error.\n");
 				exit(-1);
 			}
 

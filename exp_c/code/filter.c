@@ -1,10 +1,13 @@
 #include "nubesuko.h"
 
-double **filterling(int **image, int cols, int rows, int filter_size, double **weight)
+double **filterling(int **image, int cols, int rows, int filter_size, double **weight, int *maxval, int *minval)
 {
 
 	int i, j, x, y;
-	double maxval = 0.0, minval = 255.0, pixcel_value, **filtered_img;
+	double pixcel_value, **filtered_img;
+
+	*maxval = 0.0;
+	*minval = 255.0;
 
 	for (i = 0; i < filter_size; i++)
 	{
