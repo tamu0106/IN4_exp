@@ -23,7 +23,7 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
             {
                 tmp[y][x] = 0;
             }
-            //tmp[y][x] = (tmp[y][x] * multi) + correct;
+            tmp[y][x] = (tmp[y][x] * multi);
             filtered_img[y][x] = (unsigned int)tmp[y][x];
         }
     }
