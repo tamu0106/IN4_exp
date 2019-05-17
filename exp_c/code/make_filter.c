@@ -31,6 +31,42 @@ double **make_filter(int size, int type)
 				break;
 
 			case 8:
+				//dif_prewitt
+				if (!sub_type)
+				{
+					//dif_y
+					if (i == 0)
+					{
+						val = -1;
+					}
+					else if (i == 2)
+					{
+						val = 1;
+					}
+					else
+					{
+						val = 0;
+					}
+				}
+				else
+				{
+					//dif_x
+					if (j == 0)
+					{
+						val = -1;
+					}
+					else if (j == 2)
+					{
+						val = 1;
+					}
+					else
+					{
+						val = 0;
+					}
+				}
+				break;
+
+			case 9:
 				//dif_lap
 				//val = fil_dif_lap(dis);
 				if (dis == 0)
@@ -38,39 +74,6 @@ double **make_filter(int size, int type)
 					val = -4;
 				}
 				else if (dis == 1)
-				{
-					val = 1;
-				}
-				else
-				{
-					val = 0;
-				}
-
-				break;
-
-			case 9:
-				//dif_x
-				if (i == 0)
-				{
-					val = -1;
-				}
-				else if (i == 2)
-				{
-					val = 1;
-				}
-				else
-				{
-					val = 0;
-				}
-				break;
-
-			case 10:
-				//dif_y
-				if (j == 0)
-				{
-					val = -1;
-				}
-				else if (j == 2)
 				{
 					val = 1;
 				}
