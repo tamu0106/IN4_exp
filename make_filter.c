@@ -85,15 +85,11 @@ double **make_filter(int size, int type)
 				//val = fil_sharp(dis);
 				if (dis == 0)
 				{
-					val = 5;
-				}
-				else if (dis == 1)
-				{
-					val = -1;
+					val = 9;
 				}
 				else
 				{
-					val = 0;
+					val = -1;
 				}
 				break;
 
