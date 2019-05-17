@@ -88,13 +88,16 @@ double **make_filter(int size, int type)
 				//val = fil_sharp(dis);
 				if (dis == 0)
 				{
-					val = 9;
+					val = 5;
 				}
-				else
+				else if (dis == 1)
 				{
 					val = -1;
 				}
-				break;
+				else
+				{
+					val = 0;
+				}
 
 			default:
 				printf("filter type error.\n");
