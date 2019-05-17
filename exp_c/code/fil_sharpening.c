@@ -24,6 +24,7 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
                 tmp[y][x] = 0;
             }
             filtered_img[y][x] = (unsigned int)tmp[y][x];
+            filtered_img[y][x] = image[y][x] - filtered_img[y][x];
         }
     }
     return filtered_img;
