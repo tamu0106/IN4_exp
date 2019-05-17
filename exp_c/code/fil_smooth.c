@@ -1,6 +1,6 @@
 #include "nubesuko.h"
 
-gray **fil_smooth(gray image, int cols, int rows, int filter_size)
+gray **fil_smooth(gray **image, int cols, int rows, int filter_size)
 {
     int maxval, minval, x, y;
     double **tmp, **weight;
