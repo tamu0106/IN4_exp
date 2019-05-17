@@ -37,14 +37,14 @@ double **filterling(int **image, int cols, int rows, int filter_size, double **w
 				}
 			}
 			filtered_img[y][x] = pixcel_value;
-			if (pixcel_value < minval)
+			if (pixcel_value < *minval)
 			{
-				minval = pixcel_value;
+				*minval = pixcel_value;
 			}
 
-			if (pixcel_value > maxval)
+			if (pixcel_value > *maxval)
 			{
-				maxval = pixcel_value;
+				*maxval = pixcel_value;
 			}
 		}
 	}
