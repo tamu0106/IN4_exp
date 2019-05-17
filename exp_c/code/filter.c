@@ -3,7 +3,7 @@
 double **filterling(int **image, int cols, int rows, int filter_size, double **weight)
 {
 
-	int i, j, x, y, max_value = 0;
+	int i, j, x, y;
 	double maxval = 0.0, minval = 255.0, pixcel_value, **filtered_img;
 
 	for (i = 0; i < filter_size; i++)
@@ -39,16 +39,16 @@ double **filterling(int **image, int cols, int rows, int filter_size, double **w
 				minval = pixcel_value;
 			}
 
-			if (pixcel_value > max_value)
+			if (pixcel_value > maxval)
 			{
-				max_value = pixcel_value;
+				maxval = pixcel_value;
 			}
 		}
 	}
 
 	printf("uo2\n");
-	printf("max:%f\n", max_value);
-	printf("min:%f\n", min_value);
+	printf("max:%f\n", maxval);
+	printf("min:%f\n", minval);
 
 	return filtered_img;
 }
