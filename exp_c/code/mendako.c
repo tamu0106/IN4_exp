@@ -8,12 +8,12 @@ gray **mendako(int **image, int cols, int rows, int filter_size, int pattern)
 
     filtered_img = malloc_matrix(rows, cols);
 
-    if (pattern == 9)
+    if (pattern == 8)
     {
-        weight = make_filter(filter_size, 10);
+        weight = make_filter(filter_size, 8, 0);
         xfiltered_img = filterling(image, cols, rows, filter_size, weight);
 
-        weight = make_filter(filter_size, 9);
+        weight = make_filter(filter_size, 8, 1);
         yfiltered_img = filterling(image, cols, rows, filter_size, weight);
 
         for (y = 1; y < cols - 1; y++)
@@ -27,7 +27,7 @@ gray **mendako(int **image, int cols, int rows, int filter_size, int pattern)
     }
     else
     {
-        weight = make_filter(filter_size, pattern);
+        weight = make_filter(filter_size, pattern, 1);
 
         tmp = filterling(image, cols, rows, filter_size, weight);
         for (y = 1; y < cols - 1; y++)

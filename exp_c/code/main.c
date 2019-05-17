@@ -38,14 +38,21 @@ int main(int argc, char *argv[])
   //フィルタ処理
   answer = mendako(image, cols, rows, size, filter_num);
 
-  //answer = filterling(image, cols, rows, size, array);
-  //printf("うお\n");
+  pritnf("ファイルに保存する?(y or n)\n");
+  scanf("%s",)
+  if()
+  {
+    file2 = fopen("nubesuko.pgm", "wb");
 
-  // mono_view(answer, cols, rows, maxval);
-  file2 = fopen("nubesuko.pgm", "wb");
+    pgm_writepgm(file2, answer, cols, rows, maxval, 1);
+    fclose(file2);
+  }
+  else
+  {
+    // mono_view(answer, cols, rows, maxval);
+  }
 
-  pgm_writepgm(file2, answer, cols, rows, maxval, 1);
-  fclose(file2);
+  return 0;
 }
 
 //二次元配列matrixを動的確保
