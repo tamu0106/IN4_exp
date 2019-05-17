@@ -2,8 +2,8 @@
 
 gray **fil_dif_lap(gray image, int cols, int rows, int filter_size)
 {
-    int maxval, minval;
-    double **tmp, **weight, multi, correct, x, y;
+    int maxval, minval, x, y;
+    double **tmp, **weight, multi, correct;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);

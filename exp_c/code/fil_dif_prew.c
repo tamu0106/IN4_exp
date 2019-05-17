@@ -2,8 +2,8 @@
 
 gray **fil_dif_prew(gray image, int cols, int rows, int filter_size)
 {
-    int maxval, minval;
-    double **xfiltered_img, **yfiltered_img, **weight, x, y;
+    int maxval, minval, x, y;
+    double **xfiltered_img, **yfiltered_img, **weight;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);
