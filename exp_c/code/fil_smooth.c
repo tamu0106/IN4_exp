@@ -2,6 +2,7 @@
 
 gray fil_smooth(gray image, int cols, int rows, int filter_size)
 {
+    int x, y;
     double **tmp, **weight;
     gray **filtered_img;
 
