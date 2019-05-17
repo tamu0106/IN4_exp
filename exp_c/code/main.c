@@ -4,10 +4,10 @@ int main(int argc, char *argv[])
 {
 
   FILE *file1, *file2;
-  int pattern, size, cols, rows, maxval, i, j;
+  int pattern, size, cols, rows, i, j;
   double **array;
   char filename[16];
-  gray **image, **answer;
+  gray **image, **answer, maxval;
 
   //画像の読み込み
   file1 = fopen(argv[1], "rb");
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
 //二次元配列matrixを動的確保
 gray **malloc_matrix(int rows, int cols)
 {
-  int **matrix;
+  gray **matrix;
   int i;
 
   if ((matrix = malloc(rows * sizeof(gray *))) == NULL)

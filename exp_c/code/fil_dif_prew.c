@@ -1,9 +1,9 @@
 #include "nubesuko.h"
 
-gray fil_dif_prew(gray image, int cols, int rows, int filter_size)
+gray **fil_dif_prew(gray image, int cols, int rows, int filter_size)
 {
-    int maxval, minval, x, y;
-    double **xfiltered_img, **yfiltered_img, **weight;
+    int maxval, minval;
+    double **xfiltered_img, **yfiltered_img, **weight, x, y;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);

@@ -1,9 +1,9 @@
 #include "nubesuko.h"
 
-gray fil_dif_lap(gray image, int cols, int rows, int filter_size)
+gray **fil_dif_lap(gray image, int cols, int rows, int filter_size)
 {
-    int maxval, minval, x, y;
-    double **tmp, **weight, multi, correct;
+    int maxval, minval;
+    double **tmp, **weight, multi, correct, x, y;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);

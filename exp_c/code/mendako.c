@@ -1,6 +1,6 @@
 #include "nubesuko.h"
 
-gray **mendako(int **image, int cols, int rows, int filter_size, int pattern)
+gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
 {
     gray **filtered_img;
 

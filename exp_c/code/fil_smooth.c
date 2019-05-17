@@ -1,9 +1,9 @@
 #include "nubesuko.h"
 
-gray fil_smooth(gray image, int cols, int rows, int filter_size)
+gray **fil_smooth(gray image, int cols, int rows, int filter_size)
 {
-    int maxval, minval, x, y;
-    double **tmp, **weight;
+    int maxval, minval;
+    double **tmp, **weight, x, y;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);

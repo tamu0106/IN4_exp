@@ -1,6 +1,6 @@
 #include "nubesuko.h"
 
-double **filterling(int **image, int cols, int rows, int filter_size, double **weight, int *maxval, int *minval)
+double **filterling(int **image, int cols, int rows, int filter_size, double **weight, double *maxval, double *minval)
 {
 
 	int i, j, x, y;
