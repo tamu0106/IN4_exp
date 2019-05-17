@@ -10,7 +10,7 @@ gray fil_smooth(gray image, int cols, int rows, int filter_size)
 
     weight = make_filter(filter_size, 0, 0);
 
-    tmp = filterling(image, cols, rows, filter_size, weight);
+    tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
     for (y = 1; y < cols - 1; y++)
     {
         for (x = 1; x < rows - 1; x++)
