@@ -2,8 +2,8 @@
 
 gray **fil_smooth(gray **image, int cols, int rows, int filter_size)
 {
-    int maxval, minval, x, y;
-    double **tmp, **weight;
+    int x, y;
+    double **tmp, **weight, maxval, minval;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);

@@ -2,8 +2,8 @@
 
 gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
 {
-    int maxval, minval, x, y;
-    double **tmp, **weight, multi, correct;
+    int x, y;
+    double **tmp, **weight, multi, correct, maxval, minval;
     gray **filtered_img;
 
     filtered_img = malloc_matrix(rows, cols);
