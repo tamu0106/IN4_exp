@@ -32,7 +32,7 @@ double **make_filter(int size, int type, int sub_type)
 
 			case 8:
 				//dif_prewitt
-				if (!sub_type)
+				if (sub_type)
 				{
 					//dif_y
 					if (i == 0)
