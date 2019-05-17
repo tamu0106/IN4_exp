@@ -1,6 +1,6 @@
 #include "nubesuko.h"
 
-double **make_filter(int size, int type)
+double **make_filter(int size, int type, int sub_type)
 {
 	int i, j, dis;
 	double **pattern, val;

@@ -3,7 +3,7 @@
 #include <math.h>
 #include <netpbm/pgm.h>
 
-double **make_filter(int size, int type);
+double **make_filter(int size, int type, int sub_sype);
 double **filterling(int **image, int rows, int cols, int filter_size, double **weight);
 gray **malloc_matrix(int rows, int cols);
 void free_matrix(int **matrix, int size);
