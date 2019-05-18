@@ -53,10 +53,12 @@ int main(int argc, char *argv[])
     printf("Filename?\n>>");
     scanf("%s", filename);
 
+    printf("Log:file open\n");
     file2 = fopen(filename, "wb");
 
     pgm_writepgm(file2, answer, cols, rows, maxval, 1);
     fclose(file2);
+    printf("Log:Write File.\n");
   }
   else
   {

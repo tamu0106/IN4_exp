@@ -9,6 +9,7 @@ double **filterling(gray **image, int cols, int rows, int filter_size, double **
 	*maxval = 0.0;
 	*minval = 255.0;
 
+	/*
 	for (i = 0; i < filter_size; i++)
 	{
 		for (j = 0; j < filter_size; j++)
@@ -17,6 +18,7 @@ double **filterling(gray **image, int cols, int rows, int filter_size, double **
 		}
 		printf("\n");
 	}
+	*/
 
 	filtered_img = malloc(rows * sizeof(double *));
 	for (i = 0; i < rows; i++)
@@ -49,9 +51,9 @@ double **filterling(gray **image, int cols, int rows, int filter_size, double **
 		}
 	}
 
-	printf("uo2\n");
-	printf("max:%f\n", *maxval);
-	printf("min:%f\n", *minval);
+	//printf("uo2\n");
+	//printf("max:%f\n", *maxval);
+	//printf("min:%f\n", *minval);
 
 	return filtered_img;
 }
