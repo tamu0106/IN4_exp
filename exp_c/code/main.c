@@ -74,7 +74,7 @@ gray **malloc_matrix(int rows, int cols)
   gray **matrix;
   int i;
 
-  if ((matrix = malloc(rows * sizeof(gray *))) == NULL)
+  if ((matrix = calloc(rows, sizeof(gray *))) == NULL)
   {
     printf("行列用の領域が確保できませんでした。\n");
     exit(-1);
@@ -82,7 +82,7 @@ gray **malloc_matrix(int rows, int cols)
 
   for (i = 0; i < rows; i++)
   {
-    matrix[i] = malloc(cols * sizeof(gray));
+    matrix[i] = calloc(cols, sizeof(gray));
   }
 
   return matrix;

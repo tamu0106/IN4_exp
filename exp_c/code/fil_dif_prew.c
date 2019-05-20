@@ -18,7 +18,15 @@ gray **fil_dif_prew(gray **image, int cols, int rows, int filter_size)
     {
         for (x = 1; x < rows - 1; x++)
         {
-            filtered_img[y][x] = (unsigned int)hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
+            if (xfiltered_img[y][x] > 255)
+            {
+                xfiltered_img[y][x] = 255;
+            }
+            if (yfiltered_img[y][x] > 255)
+            {
+                yfiltered_img[y][x] = 255;
+            }
+            filtered_img[y][x] = (gray)hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
         }
     }
     return filtered_img;
