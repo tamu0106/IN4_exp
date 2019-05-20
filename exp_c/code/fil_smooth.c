@@ -11,10 +11,18 @@ gray **fil_smooth(gray **image, int cols, int rows, int filter_size)
     weight = make_filter(filter_size, 0, 0);
 
     tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
-    for (y = 1; y < cols - 1; y++)
+    for (y = 0; y < cols; y++)
     {
-        for (x = 1; x < rows - 1; x++)
+        for (x = 0; x < rows; x++)
         {
+	  if (tmp[y][x] <= 0)
+            {
+                tmp[y][x] = 0;
+            }
+	    else if(tmp[y][x] > 255)
+	    {
+	        tmp[y][x] = 255;
+	    }
             filtered_img[y][x] = (unsigned int)tmp[y][x];
         }
     }

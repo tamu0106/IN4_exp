@@ -12,7 +12,7 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
 
     tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
 
-    multi = 255 / (maxval - minval);
+    multi = 255 / (maxval);
     correct = fabs(minval * multi);
 
     for (y = 1; y < cols - 1; y++)
@@ -23,7 +23,11 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
             {
                 tmp[y][x] = 0;
             }
-            filtered_img[y][x] = (unsigned int)tmp[y][x];
+	    else if(tmp[y][x] >= 256)
+	    {
+	      tmp[y][x] = 255;
+	    }
+            filtered_img[y][x] = (unsigned int)(tmp[y][x]);
         }
     }
     return filtered_img;
