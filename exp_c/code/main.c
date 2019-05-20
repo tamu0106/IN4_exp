@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 
   FILE *file1, *file2;
-  int pattern, size, cols, rows, i, j;
+  int pattern = 0, size = 3, cols, rows, i, j;
   double **array;
   char filename[32];
   gray **image, **answer, maxval;
