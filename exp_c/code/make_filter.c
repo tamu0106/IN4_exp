@@ -7,10 +7,10 @@ double **make_filter(int size, int type, int sub_type)
 
 	//printf("size:%d\n", size);
 
-	pattern = malloc(size * sizeof(double *));
+	pattern = calloc(size, sizeof(double *));
 	for (i = 0; i < size; i++)
 	{
-		pattern[i] = malloc(size * sizeof(double));
+		pattern[i] = calloc(size, sizeof(double));
 	}
 	//printf("malloc\n");
 

@@ -20,10 +20,10 @@ double **filterling(gray **image, int cols, int rows, int filter_size, double **
 	}
 	*/
 
-	filtered_img = malloc(rows * sizeof(double *));
+	filtered_img = calloc(rows, sizeof(double *));
 	for (i = 0; i < rows; i++)
 	{
-		filtered_img[i] = malloc(cols * sizeof(double));
+		filtered_img[i] = calloc(cols, sizeof(double));
 	}
 
 	for (y = 1; y < cols - 1; y++)
