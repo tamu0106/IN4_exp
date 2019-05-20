@@ -15,14 +15,14 @@ gray **fil_smooth(gray **image, int cols, int rows, int filter_size)
     {
         for (x = 0; x < rows; x++)
         {
-	  if (tmp[y][x] <= 0)
+            if (tmp[y][x] <= 0)
             {
                 tmp[y][x] = 0;
             }
-	    else if(tmp[y][x] > 255)
-	    {
-	        tmp[y][x] = 255;
-	    }
+            else if (tmp[y][x] > 255)
+            {
+                tmp[y][x] = 255;
+            }
             filtered_img[y][x] = (unsigned int)tmp[y][x];
         }
     }

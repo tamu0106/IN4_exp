@@ -23,10 +23,10 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
             {
                 tmp[y][x] = 0;
             }
-	    else if(tmp[y][x] >= 256)
-	    {
-	      tmp[y][x] = 255;
-	    }
+            else if (tmp[y][x] >= 256)
+            {
+                tmp[y][x] = 255;
+            }
             filtered_img[y][x] = (unsigned int)(tmp[y][x]);
         }
     }
