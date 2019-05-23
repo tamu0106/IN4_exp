@@ -1,5 +1,6 @@
 #include "nubesuko.h"
 
+//パターンを用いてフィルタ処理
 double **filterling(gray **image, int cols, int rows, int filter_size, double **weight, double *maxval, double *minval)
 {
 

@@ -1,5 +1,6 @@
 #include "nubesuko.h"
 
+//平均値フィルタ
 gray **fil_ave(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;

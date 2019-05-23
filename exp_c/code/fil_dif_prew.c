@@ -1,5 +1,6 @@
 #include "nubesuko.h"
 
+//prewitt
 gray **fil_dif_prew(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;

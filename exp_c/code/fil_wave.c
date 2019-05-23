@@ -1,5 +1,6 @@
 #include "nubesuko.h"
 
+//局所荷重平均フィルタ
 gray **fil_ave_weighted(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;

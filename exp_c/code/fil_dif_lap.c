@@ -1,5 +1,6 @@
 #include "nubesuko.h"
 
+//ラプラシアンフィルタ
 gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;

@@ -1,5 +1,6 @@
 #include "nubesuko.h"
 
+//sobel
 gray **fil_dif_sobel(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;

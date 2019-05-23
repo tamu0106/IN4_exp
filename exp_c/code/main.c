@@ -43,14 +43,15 @@ int main(int argc, char *argv[])
   //フィルタ処理
   answer = mendako(image, cols, rows, size, pattern);
 
+  /*
   printf("Select output.\n");
   printf("1.Write File\n");
   printf("2.Output Window\n");
   printf(">>");
 
   scanf("%d", &pattern);
-
-  if (pattern == 1)
+  */
+  if (1)
   {
     printf("Filename?\n>>");
     scanf("%s", filename);
