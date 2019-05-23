@@ -5,8 +5,6 @@ gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
 {
     gray **filtered_img;
 
-    filtered_img = calloc_g_matrix(rows, cols);
-
     switch (pattern)
     {
     case 0:

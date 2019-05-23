@@ -118,10 +118,11 @@ double **calloc_d_matrix(int rows, int cols)
   return matrix;
 }
 
-void free_matrix(int **matrix, int size)
+//メモリ解放
+void free_matrix(void **matrix, int cols)
 {
   int i;
-  for (i = 0; i < size; i++)
+  for (i = 0; i < cols; i++)
   {
     free(matrix[i]);
   }
