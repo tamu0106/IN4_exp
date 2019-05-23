@@ -9,7 +9,11 @@ gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
     switch (pattern)
     {
     case 0:
-        filtered_img = fil_smooth(image, cols, rows, filter_size);
+        filtered_img = fil_ave(image, cols, rows, filter_size);
+        break;
+
+    case 1:
+        filtered_img = fil_ave_weighted(image, cols, rows, filter_size);
         break;
 
     case 8:
@@ -17,6 +21,10 @@ gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
         break;
 
     case 9:
+        filtered_img = fil_dif_sobel(image, cols, rows, filter_size);
+        break;
+
+    case 10:
         filtered_img = fil_dif_lap(image, cols, rows, filter_size);
         break;
 

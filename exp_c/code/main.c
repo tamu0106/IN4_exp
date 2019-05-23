@@ -30,9 +30,11 @@ int main(int argc, char *argv[])
 
   //フィルタ選択
   printf("Select Filter Type.\n");
-  printf("0.Smoothing_filter\n");
+  printf("0.Average_Smoothing_filter\n");
+  printf("1.WeightedAverage_Smoothing_filter\n");
   printf("8.Differential_filter\n");
-  printf("9.Laplacian_filter\n");
+  printf("9.Sobel_filter\n");
+  printf("10.Laplacian_filter\n");
   printf("16.Sharpening_filter\n");
   printf(">>");
 

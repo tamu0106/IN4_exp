@@ -34,7 +34,7 @@ double **make_filter(int size, int type, int sub_type)
 				//dif_prewitt
 				if (sub_type)
 				{
-					//dif_y
+					//prewitt_y
 					if (i == 0)
 					{
 						val = -1;
@@ -43,14 +43,10 @@ double **make_filter(int size, int type, int sub_type)
 					{
 						val = 1;
 					}
-					else
-					{
-						val = 0;
-					}
 				}
 				else
 				{
-					//dif_x
+					//prewitt_x
 					if (j == 0)
 					{
 						val = -1;
@@ -59,14 +55,38 @@ double **make_filter(int size, int type, int sub_type)
 					{
 						val = 1;
 					}
-					else
-					{
-						val = 0;
-					}
 				}
 				break;
 
 			case 9:
+				//dif_sobel
+				if (sub_type)
+				{
+					//sobel_y
+					if (i == 0)
+					{
+						val = -1;
+					}
+					else if (i == 2)
+					{
+						val = 1;
+					}
+				}
+				else
+				{
+					//sobel_x
+					if (j == 0)
+					{
+						val = -1;
+					}
+					else if (j == 2)
+					{
+						val = 1;
+					}
+				}
+				break;
+
+			case 10:
 				//dif_lap
 				//val = fil_dif_lap(dis);
 				if (dis == 0)
@@ -77,10 +97,7 @@ double **make_filter(int size, int type, int sub_type)
 				{
 					val = 1;
 				}
-				else
-				{
-					val = 0;
-				}
+
 				break;
 
 			case 16:
@@ -94,10 +111,7 @@ double **make_filter(int size, int type, int sub_type)
 				{
 					val = -1;
 				}
-				else
-				{
-					val = 0;
-				}
+
 				break;
 
 			default:
