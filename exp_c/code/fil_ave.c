@@ -11,7 +11,6 @@ gray **fil_ave(gray **image, int cols, int rows, int filter_size)
     weight = make_filter(filter_size, 0, 0);
 
     tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
-    free_matrix(weight, filter_size);
     for (y = 0; y < cols; y++)
     {
         for (x = 0; x < rows; x++)
@@ -27,5 +26,8 @@ gray **fil_ave(gray **image, int cols, int rows, int filter_size)
             filtered_img[y][x] = (unsigned int)tmp[y][x];
         }
     }
+
+    free_d_matrix(weight, filter_size);
+    free_d_matrix(tmp, filter_size);
     return filtered_img;
 }

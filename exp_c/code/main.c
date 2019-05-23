@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
     // mono_view(answer, cols, rows, maxval);
   }
 
+  free_g_matrix(answer, cols);
   return 0;
 }
 
@@ -119,7 +120,18 @@ double **calloc_d_matrix(int rows, int cols)
 }
 
 //メモリ解放
-void free_matrix(void **matrix, int cols)
+void free_g_matrix(gray **matrix, int cols)
+{
+  int i;
+  for (i = 0; i < cols; i++)
+  {
+    free(matrix[i]);
+  }
+  free(matrix);
+}
+
+//メモリ解放
+void free_d_matrix(double **matrix, int cols)
 {
   int i;
   for (i = 0; i < cols; i++)

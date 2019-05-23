@@ -17,4 +17,5 @@ double **filterling(gray **image, int rows, int cols, int filter_size, double **
 
 gray **calloc_g_matrix(int rows, int cols);
 double **calloc_d_matrix(int rows, int cols);
-void free_matrix(void **matrix, int cols);
+void free_g_matrix(gray **matrix, int cols);
+void free_d_matrix(double **matrix, int cols);
