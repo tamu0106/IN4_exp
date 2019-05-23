@@ -16,6 +16,7 @@ double **make_filter(int size, int type, int sub_type)
 		{
 			//printf("%d\n", j);
 			dis = abs(i - size / 2) + abs(j - size / 2); //中心からの距離
+			val = 0;
 			//printf("dis:%d\n", dis);
 			switch (type)
 			{
@@ -114,7 +115,7 @@ double **make_filter(int size, int type, int sub_type)
 				exit(-1);
 			}
 
-			//printf("val:%d\n",val);
+			//printf("val:%f\n",val);
 			pattern[i][j] = val;
 		}
 	}
