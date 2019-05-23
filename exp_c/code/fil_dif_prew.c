@@ -29,5 +29,8 @@ gray **fil_dif_prew(gray **image, int cols, int rows, int filter_size)
             filtered_img[y][x] = (gray)hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
         }
     }
+    free_d_matrix(weight, filter_size);
+    free_d_matrix(xfiltered_img, filter_size);
+    free_d_matrix(yfiltered_img, filter_size);
     return filtered_img;
 }

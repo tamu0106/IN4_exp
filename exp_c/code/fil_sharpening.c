@@ -30,5 +30,7 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
             filtered_img[y][x] = (unsigned int)(tmp[y][x]);
         }
     }
+    free_d_matrix(weight, filter_size);
+    free_d_matrix(tmp, filter_size);
     return filtered_img;
 }
