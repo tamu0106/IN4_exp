@@ -70,21 +70,49 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-//二次元配列matrixを動的確保
-gray **malloc_matrix(int rows, int cols)
+//gray型二次元配列matrixを動的確保
+gray **calloc_g_matrix(int rows, int cols)
 {
   gray **matrix;
   int i;
 
   if ((matrix = calloc(rows, sizeof(gray *))) == NULL)
   {
-    printf("行列用の領域が確保できませんでした。\n");
+    printf("calloc error.\n");
     exit(-1);
   }
 
   for (i = 0; i < rows; i++)
   {
-    matrix[i] = calloc(cols, sizeof(gray));
+    if ((matrix[i] = calloc(cols, sizeof(gray))) == NULL)
+    {
+      printf("calloc error.\n");
+      exit(-1);
+    }
+  }
+
+  return matrix;
+}
+
+//double型二次元配列matrixを動的確保
+double **calloc_d_matrix(int rows, int cols)
+{
+  double **matrix;
+  int i;
+
+  if ((matrix = calloc(rows, sizeof(double *))) == NULL)
+  {
+    printf("calloc error.\n");
+    exit(-1);
+  }
+
+  for (i = 0; i < rows; i++)
+  {
+    if ((matrix[i] = calloc(cols, sizeof(double))) == NULL)
+    {
+      printf("calloc error.\n");
+      exit(-1);
+    }
   }
 
   return matrix;

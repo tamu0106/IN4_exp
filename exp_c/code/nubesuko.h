@@ -14,5 +14,6 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size);
 
 double **make_filter(int size, int type, int sub_sype);
 double **filterling(gray **image, int rows, int cols, int filter_size, double **weight, double *maxval, double *minval);
-gray **malloc_matrix(int rows, int cols);
+gray **calloc_g_matrix(int rows, int cols);
+double **calloc_d_matrix(int rows, int cols);
 void free_matrix(int **matrix, int size);

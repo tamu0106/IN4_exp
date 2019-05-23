@@ -20,11 +20,7 @@ double **filterling(gray **image, int cols, int rows, int filter_size, double **
 	}
 	*/
 
-	filtered_img = calloc(rows, sizeof(double *));
-	for (i = 0; i < rows; i++)
-	{
-		filtered_img[i] = calloc(cols, sizeof(double));
-	}
+	filtered_img = calloc_d_matrix(rows, cols);
 
 	for (y = 1; y < cols - 1; y++)
 	{
