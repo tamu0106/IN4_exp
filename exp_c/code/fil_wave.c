@@ -6,7 +6,7 @@ gray **fil_ave_weighted(gray **image, int cols, int rows, int filter_size)
     double **tmp, **weight, maxval, minval;
     gray **filtered_img;
 
-    filtered_img = malloc_g_matrix(rows, cols);
+    filtered_img = calloc_g_matrix(rows, cols);
 
     weight = make_filter(filter_size, 0, 0);
 
