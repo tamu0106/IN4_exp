@@ -6,7 +6,7 @@ gray **fil_dif_prew(gray **image, int cols, int rows, int filter_size)
     double **xfiltered_img, **yfiltered_img, **weight, maxval, minval;
     gray **filtered_img;
 
-    filtered_img = malloc_matrix(rows, cols);
+    filtered_img = malloc_g_matrix(rows, cols);
 
     weight = make_filter(filter_size, 8, 0);
     xfiltered_img = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);

@@ -5,7 +5,7 @@ gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
 {
     gray **filtered_img;
 
-    filtered_img = malloc_matrix(rows, cols);
+    filtered_img = malloc_g_matrix(rows, cols);
 
     switch (pattern)
     {

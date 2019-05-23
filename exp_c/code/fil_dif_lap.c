@@ -6,7 +6,7 @@ gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
     double **tmp, **weight, multi, correct, maxval, minval;
     gray **filtered_img;
 
-    filtered_img = malloc_matrix(rows, cols);
+    filtered_img = malloc_g_matrix(rows, cols);
 
     weight = make_filter(filter_size, 10, 0);
 
