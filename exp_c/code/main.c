@@ -30,15 +30,45 @@ int main(int argc, char *argv[])
 
   //フィルタ選択
   printf("Select Filter Type.\n");
-  printf("0.Average_Smoothing_filter\n");
-  printf("1.WeightedAverage_Smoothing_filter\n");
-  printf("8.Differential_filter\n");
-  printf("9.Sobel_filter\n");
-  printf("10.Laplacian_filter\n");
-  printf("16.Sharpening_filter\n");
+  printf("0.Smoothing Filter\n");
+  printf("1.Differential Filter\n");
+  printf("2.Sharpening Filter\n");
   printf(">>");
 
   scanf("%d", &pattern);
+  pattern += 255;
+  switch (pattern)
+  {
+  case 255:
+    printf("Select Smoothing Filter Type.\n");
+    printf("0.Smoothing Filter\n");
+    printf("1.Weighted Smoothing filter\n");
+    printf("2.Median Filter\n");
+    printf(">>");
+
+    scanf("%d", &pattern);
+    break;
+
+  case 256:
+    printf("Select Differential Filter Type.\n");
+    printf("0.Operation Prewitt\n");
+    printf("1.Operation Sobel\n");
+    printf("2.Laplacian Filter\n");
+    printf(">>");
+
+    scanf("%d", &pattern);
+    pattern += 8;
+    break;
+  case 257:
+    printf("Select Sharpening Filter Type.\n");
+    printf("0.Four directions Sharpening Filter\n");
+    printf("1.Eight directions Sharpening Filter\n");
+    printf(">>");
+
+    scanf("%d", &pattern);
+    pattern += 16;
+    break;
+  }
 
   //フィルタ処理
   answer = mendako(image, cols, rows, size, pattern);

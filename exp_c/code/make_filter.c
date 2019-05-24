@@ -4,7 +4,7 @@
 double **make_filter(int size, int type, int sub_type)
 {
 	int i, j, dis;
-	double **pattern, val;
+	double **pattern, val = 0;
 
 	//printf("size:%d\n", size);
 
@@ -23,8 +23,19 @@ double **make_filter(int size, int type, int sub_type)
 			{
 			case 0:
 				//smooth_ave
-				//val = fil_smooth_ave(dis);
 				val = 1 / 9.0;
+				break;
+
+			case 1:
+				//smooth_ave_weighted
+				if (dis == 0)
+				{
+					val = 2 / 10.0;
+				}
+				else
+				{
+					val = 1 / 10.0;
+				}
 				break;
 
 			case 8:
@@ -85,7 +96,6 @@ double **make_filter(int size, int type, int sub_type)
 
 			case 10:
 				//dif_lap
-				//val = fil_dif_lap(dis);
 				if (dis == 0)
 				{
 					val = -4;
@@ -99,7 +109,6 @@ double **make_filter(int size, int type, int sub_type)
 
 			case 16:
 				//sharpening
-				//val = fil_sharp(dis);
 				if (dis == 0)
 				{
 					val = 5;
