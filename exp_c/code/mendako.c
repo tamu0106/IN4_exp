@@ -27,11 +27,11 @@ gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
         filtered_img = fil_dif_lap(image, cols, rows, filter_size);
         break;
 
-    case 16:
+    case 16: //4
         filtered_img = fil_sharpening(image, cols, rows, filter_size, 0);
         break;
 
-    case 17:
+    case 17: //8
         filtered_img = fil_sharpening(image, cols, rows, filter_size, 1);
         break;
 

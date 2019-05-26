@@ -4,24 +4,23 @@
 gray **fil_sharpening(gray **image, int cols, int rows, int filter_size, int mode)
 {
     int x, y;
-    double **tmp, **weight, multi, correct, maxval, minval;
+    double **tmp, **weight, maxval, minval;
     gray **filtered_img;
 
     filtered_img = calloc_g_matrix(rows, cols);
 
     if (mode)
     {
+        //8
         weight = make_filter(filter_size, 17, 0);
     }
     else
     {
+        //4
         weight = make_filter(filter_size, 16, 0);
     }
 
     tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
-
-    multi = 255 / (maxval);
-    correct = fabs(minval * multi);
 
     for (y = 1; y < cols - 1; y++)
     {
