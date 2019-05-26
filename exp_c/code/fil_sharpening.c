@@ -1,7 +1,7 @@
 #include "nubesuko.h"
 
 //鮮鋭化フィルタ
-gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
+gray **fil_sharpening(gray **image, int cols, int rows, int filter_size, int mode)
 {
     int x, y;
     double **tmp, **weight, multi, correct, maxval, minval;
@@ -9,7 +9,14 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size)
 
     filtered_img = calloc_g_matrix(rows, cols);
 
-    weight = make_filter(filter_size, 16, 0);
+    if (mode)
+    {
+        weight = make_filter(filter_size, 17, 0);
+    }
+    else
+    {
+        weight = make_filter(filter_size, 16, 0);
+    }
 
     tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
 

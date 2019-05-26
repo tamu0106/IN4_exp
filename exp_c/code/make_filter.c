@@ -112,12 +112,25 @@ double **make_filter(int size, int type, int sub_type)
 				break;
 
 			case 16:
-				//sharpening
+				//sharpening_4
 				if (dis == 0)
 				{
 					val = 5;
 				}
 				else if (dis == 1)
+				{
+					val = -1;
+				}
+
+				break;
+
+			case 17:
+				//sharpening_8
+				if (dis == 0)
+				{
+					val = 9;
+				}
+				else
 				{
 					val = -1;
 				}

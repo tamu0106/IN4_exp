@@ -28,7 +28,11 @@ gray **mendako(gray **image, int cols, int rows, int filter_size, int pattern)
         break;
 
     case 16:
-        filtered_img = fil_sharpening(image, cols, rows, filter_size);
+        filtered_img = fil_sharpening(image, cols, rows, filter_size, 0);
+        break;
+
+    case 17:
+        filtered_img = fil_sharpening(image, cols, rows, filter_size, 1);
         break;
 
     default:
