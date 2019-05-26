@@ -4,14 +4,14 @@
 gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;
-    double **tmp, **weight, multi, correct, maxval, minval;
+    double **tmp, **weight, multi, correct, maxval = 0, minval = 255;
     gray **filtered_img;
 
     filtered_img = calloc_g_matrix(rows, cols);
 
     weight = make_filter(filter_size, 10, 0);
 
-    tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
+    tmp = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     multi = 255 / (maxval - minval);
     correct = fabs(minval * multi);

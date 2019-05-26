@@ -3,7 +3,7 @@
 //値に応じてパターン生成
 double **make_filter(int size, int type, int sub_type)
 {
-	int i, j, dis;
+	int i, j, dis, x_section, y_section, cnt = 0;
 	double **pattern, val = 0;
 
 	//printf("size:%d\n", size);
@@ -17,28 +17,41 @@ double **make_filter(int size, int type, int sub_type)
 		{
 			//printf("%d\n", j);
 			dis = abs(i - size / 2) + abs(j - size / 2); //中心からの距離
+
+			//3*3に均等に割った範囲でどれに属する座標か
+			//x_sec,y_sec
+			//3,3 2,3 1,3
+			//3,2 2,2 1,2
+			//3,1 2,1 1,1
+			x_section = (i <= size / 3 - 1) + (i <= size * 2 / 3 - 1) + 1;
+			y_section = (j <= size / 3 - 1) + (j <= size * 2 / 3 - 1) + 1;
+			printf("%d,%d\n", x_section, y_section);
 			val = 0;
 			//printf("dis:%d\n", dis);
 			switch (type)
 			{
 			case 0:
 				//smooth_ave
-				val = 1 / 9.0;
+				val = 1;
+				cnt += 1;
 				break;
 
 			case 1:
 				//smooth_ave_weighted
-				if (dis == 0)
+				if ((x_section == 2) && (y_section == 2))
 				{
-					val = 4 / 16.0;
+					val = 4;
+					cnt += 4;
 				}
-				else if (dis == 1)
+				else if ((x_section == 2) || (y_section == 2))
 				{
-					val = 2 / 16.0;
+					val = 2;
+					cnt += 2;
 				}
 				else
 				{
-					val = 1 / 16.0;
+					val = 1;
+					cnt += 1;
 				}
 				break;
 
@@ -47,11 +60,11 @@ double **make_filter(int size, int type, int sub_type)
 				if (sub_type)
 				{
 					//prewitt_y
-					if (i == 0)
+					if (x_section == 3)
 					{
 						val = -1;
 					}
-					else if (i == 2)
+					else if (x_section == 1)
 					{
 						val = 1;
 					}
@@ -59,11 +72,11 @@ double **make_filter(int size, int type, int sub_type)
 				else
 				{
 					//prewitt_x
-					if (j == 0)
+					if (y_section == 3)
 					{
 						val = -1;
 					}
-					else if (j == 2)
+					else if (y_section == 1)
 					{
 						val = 1;
 					}
@@ -75,11 +88,11 @@ double **make_filter(int size, int type, int sub_type)
 				if (sub_type)
 				{
 					//sobel_y
-					if (i == 0)
+					if (x_section == 3)
 					{
 						val = -1;
 					}
-					else if (i == 2)
+					else if (x_section == 1)
 					{
 						val = 1;
 					}
@@ -87,11 +100,11 @@ double **make_filter(int size, int type, int sub_type)
 				else
 				{
 					//sobel_x
-					if (j == 0)
+					if (y_section == 3)
 					{
 						val = -1;
 					}
-					else if (j == 2)
+					else if (y_section == 1)
 					{
 						val = 1;
 					}
@@ -142,8 +155,22 @@ double **make_filter(int size, int type, int sub_type)
 				exit(-1);
 			}
 
-			//printf("val:%f\n",val);
+			//printf("val:%f\n", val);
 			pattern[i][j] = val;
+		}
+	}
+
+	//printf("cnt:%d\n", cnt);
+	if (type < 8 && type >= 0)
+	{
+		for (i = 0; i < size; i++)
+		{
+			for (j = 0; j < size; j++)
+			{
+				pattern[i][j] /= (double)cnt;
+				//printf("%f ", pattern[i][j]);
+			}
+			//printf("\n");
 		}
 	}
 

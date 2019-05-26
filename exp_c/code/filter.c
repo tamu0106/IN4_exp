@@ -1,14 +1,13 @@
 #include "nubesuko.h"
 
 //パターンを用いてフィルタ処理
-double **filterling(gray **image, int cols, int rows, int filter_size, double **weight, double *maxval, double *minval)
+double **filtering(gray **image, int cols, int rows, int filter_size, double **weight, double *maxval, double *minval)
 {
 
-	int i, j, x, y;
+	int i, j, x, y, clip;
 	double pixcel_value, **filtered_img;
 
-	*maxval = 0.0;
-	*minval = 255.0;
+	clip = filter_size / 2;
 
 	for (i = 0; i < filter_size; i++)
 	{
@@ -21,16 +20,16 @@ double **filterling(gray **image, int cols, int rows, int filter_size, double **
 
 	filtered_img = calloc_d_matrix(rows, cols);
 
-	for (y = 1; y < cols - 1; y++)
+	for (y = clip; y < cols - clip; y++)
 	{
-		for (x = 1; x < rows - 1; x++)
+		for (x = clip; x < rows - clip; x++)
 		{
 			pixcel_value = 0.0;
-			for (i = -1; i < filter_size - 1; i++)
+			for (i = 0 - clip; i < filter_size - clip; i++)
 			{
-				for (j = -1; j < filter_size - 1; j++)
+				for (j = 0 - clip; j < filter_size - clip; j++)
 				{
-					pixcel_value = pixcel_value + weight[i + 1][j + 1] * image[y + i][x + j];
+					pixcel_value = pixcel_value + weight[i + clip][j + clip] * image[y + i][x + j];
 				}
 			}
 			filtered_img[y][x] = pixcel_value;

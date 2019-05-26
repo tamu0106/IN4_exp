@@ -13,7 +13,7 @@ gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size);
 gray **fil_sharpening(gray **image, int cols, int rows, int filter_size, int mode);
 
 double **make_filter(int size, int type, int sub_sype);
-double **filterling(gray **image, int rows, int cols, int filter_size, double **weight, double *maxval, double *minval);
+double **filtering(gray **image, int rows, int cols, int filter_size, double **weight, double *maxval, double *minval);
 
 gray **calloc_g_matrix(int rows, int cols);
 double **calloc_d_matrix(int rows, int cols);

@@ -4,7 +4,7 @@
 gray **fil_sharpening(gray **image, int cols, int rows, int filter_size, int mode)
 {
     int x, y;
-    double **tmp, **weight, maxval, minval;
+    double **tmp, **weight, maxval = 0, minval = 255;
     gray **filtered_img;
 
     filtered_img = calloc_g_matrix(rows, cols);
@@ -20,7 +20,7 @@ gray **fil_sharpening(gray **image, int cols, int rows, int filter_size, int mod
         weight = make_filter(filter_size, 16, 0);
     }
 
-    tmp = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
+    tmp = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     for (y = 1; y < cols - 1; y++)
     {

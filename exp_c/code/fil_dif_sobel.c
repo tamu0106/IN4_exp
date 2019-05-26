@@ -4,16 +4,16 @@
 gray **fil_dif_sobel(gray **image, int cols, int rows, int filter_size)
 {
     int x, y;
-    double **xfiltered_img, **yfiltered_img, **weight, maxval, minval;
+    double **xfiltered_img, **yfiltered_img, **weight, maxval = 0, minval = 255;
     gray **filtered_img;
 
     filtered_img = calloc_g_matrix(rows, cols);
 
     weight = make_filter(filter_size, 9, 0);
-    xfiltered_img = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
+    xfiltered_img = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     weight = make_filter(filter_size, 9, 1);
-    yfiltered_img = filterling(image, cols, rows, filter_size, weight, &maxval, &minval);
+    yfiltered_img = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     for (y = 1; y < cols - 1; y++)
     {
