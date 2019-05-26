@@ -30,11 +30,15 @@ double **make_filter(int size, int type, int sub_type)
 				//smooth_ave_weighted
 				if (dis == 0)
 				{
-					val = 2 / 10.0;
+					val = 4 / 16.0;
+				}
+				else if (dis == 1)
+				{
+					val = 2 / 16.0;
 				}
 				else
 				{
-					val = 1 / 10.0;
+					val = 1 / 16.0;
 				}
 				break;
 
