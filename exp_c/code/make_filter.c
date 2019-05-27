@@ -91,10 +91,18 @@ double **make_filter(int size, int type, int sub_type)
 					if (x_section == 3)
 					{
 						val = -1;
+						if (y_section == 2)
+						{
+							val *= 2;
+						}
 					}
 					else if (x_section == 1)
 					{
 						val = 1;
+						if (y_section == 2)
+						{
+							val *= 2;
+						}
 					}
 				}
 				else
@@ -103,10 +111,18 @@ double **make_filter(int size, int type, int sub_type)
 					if (y_section == 3)
 					{
 						val = -1;
+						if (x_section == 2)
+						{
+							val *= 2;
+						}
 					}
 					else if (y_section == 1)
 					{
 						val = 1;
+						if (x_section == 2)
+						{
+							val *= 2;
+						}
 					}
 				}
 				break;

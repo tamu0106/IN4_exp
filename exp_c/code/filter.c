@@ -7,7 +7,7 @@ double **filtering(gray **image, int cols, int rows, int filter_size, double **w
 	int i, j, x, y, clip;
 	double pixcel_value, **filtered_img;
 
-	clip = filter_size / 2;
+	clip = filter_size / 2; //無視する広さ
 
 	for (i = 0; i < filter_size; i++)
 	{
