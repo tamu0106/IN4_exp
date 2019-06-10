@@ -8,7 +8,7 @@ gray **filter_processing(gray **image, int cols, int rows, int filter_size, int 
     switch (pattern)
     {
     case 0:
-        filtered_img = fil_smooth(image, cols, rows, filter_size);
+        filtered_img = fil_ave(image, cols, rows, filter_size);
         break;
 
     case 8:
