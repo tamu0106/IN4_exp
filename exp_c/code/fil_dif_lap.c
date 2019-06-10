@@ -9,7 +9,7 @@ gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
 
     filtered_img = calloc_g_matrix(rows, cols);
 
-    weight = make_filter(filter_size, 10, 0);
+    weight = make_filter(filter_size, 9, 0);
 
     tmp = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
 

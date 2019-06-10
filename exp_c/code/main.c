@@ -30,9 +30,16 @@ int main(int argc, char *argv[])
 
   //フィルタ選択
   printf("Select Filter Type.\n");
+<<<<<<< Updated upstream
   printf("0.Smoothing Filter\n");
   printf("1.Differential Filter\n");
   printf("2.Sharpening Filter\n");
+=======
+  printf("0.Smoothing_filter\n");
+  printf("8.Differential_filter\n");
+  printf("9.Laplacian_filter\n");
+  printf("16.Sharpening_filter\n");
+>>>>>>> Stashed changes
   printf(">>");
 
   scanf("%d", &pattern);
@@ -71,7 +78,7 @@ int main(int argc, char *argv[])
   }
 
   //フィルタ処理
-  answer = mendako(image, cols, rows, size, pattern);
+  answer = filter_processing(image, cols, rows, size, pattern);
 
   /*
   printf("Select output.\n");
@@ -102,8 +109,13 @@ int main(int argc, char *argv[])
   return 0;
 }
 
+<<<<<<< Updated upstream
 //gray型二次元配列matrixを動的確保
 gray **calloc_g_matrix(int rows, int cols)
+=======
+//二次元配列matrixを動的確保
+gray **malloc_matrix(int rows, int cols)
+>>>>>>> Stashed changes
 {
   gray **matrix;
   int i;
@@ -116,11 +128,15 @@ gray **calloc_g_matrix(int rows, int cols)
 
   for (i = 0; i < rows; i++)
   {
+<<<<<<< Updated upstream
     if ((matrix[i] = calloc(cols, sizeof(gray))) == NULL)
     {
       printf("calloc error.\n");
       exit(-1);
     }
+=======
+    matrix[i] = calloc(cols, sizeof(gray));
+>>>>>>> Stashed changes
   }
 
   return matrix;
