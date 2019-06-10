@@ -1,11 +1,6 @@
 #include "nubesuko.h"
 
-<<<<<<< Updated upstream:exp_c/code/fil_ave.c
-//平均値フィルタ
-gray **fil_ave(gray **image, int cols, int rows, int filter_size)
-=======
 gray **fil_smooth(gray **image, int cols, int rows, int filter_size)
->>>>>>> Stashed changes:exp_c/code/fil_smooth.c
 {
     int x, y;
     double **tmp, **weight, maxval = 0, minval = 255;
