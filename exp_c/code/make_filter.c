@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 //値に応じてパターン生成
 double **make_filter(int size, int type, int sub_type)

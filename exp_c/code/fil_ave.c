@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 gray **fil_ave(gray **image, int cols, int rows, int filter_size)
 {

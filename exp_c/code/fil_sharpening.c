@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 //鮮鋭化フィルタ
 gray **fil_sharpening(gray **image, int cols, int rows, int filter_size, int mode)

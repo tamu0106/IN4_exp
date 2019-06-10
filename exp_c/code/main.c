@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 int main(int argc, char *argv[])
 {

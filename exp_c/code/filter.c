@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 //パターンを用いてフィルタ処理
 double **filtering(gray **image, int cols, int rows, int filter_size, double **weight, double *maxval, double *minval)

@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 //受け取った値に応じて各フィルタ処理へ分岐
 gray **filter_processing(gray **image, int cols, int rows, int filter_size, int pattern)

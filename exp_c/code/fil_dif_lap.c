@@ -1,4 +1,4 @@
-#include "nubesuko.h"
+#include "temp.h"
 
 //ラプラシアンフィルタ
 gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
