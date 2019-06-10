@@ -59,13 +59,8 @@ double **make_filter(int size, int type, int sub_type)
 				//dif_prewitt
 				if (sub_type)
 				{
-<<<<<<< Updated upstream
 					//prewitt_y
 					if (x_section == 3)
-=======
-					//dif_y
-					if (i == 0)
->>>>>>> Stashed changes
 					{
 						val = -1;
 					}
@@ -73,7 +68,6 @@ double **make_filter(int size, int type, int sub_type)
 					{
 						val = 1;
 					}
-<<<<<<< Updated upstream
 				}
 				else
 				{
@@ -109,22 +103,12 @@ double **make_filter(int size, int type, int sub_type)
 						{
 							val *= 2;
 						}
-=======
-					else
-					{
-						val = 0;
->>>>>>> Stashed changes
 					}
 				}
 				else
 				{
-<<<<<<< Updated upstream
 					//sobel_x
 					if (y_section == 3)
-=======
-					//dif_x
-					if (j == 0)
->>>>>>> Stashed changes
 					{
 						val = -1;
 						if (x_section == 2)
@@ -147,7 +131,7 @@ double **make_filter(int size, int type, int sub_type)
 				}
 				break;
 
-			case 9:
+			case 10:
 				//dif_lap
 				if (dis == 0)
 				{
