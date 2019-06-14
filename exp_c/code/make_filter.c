@@ -25,7 +25,7 @@ double **make_filter(int size, int type, int sub_type)
 			//3,1 2,1 1,1
 			x_section = (i <= size / 3 - 1) + (i <= size * 2 / 3 - 1) + 1;
 			y_section = (j <= size / 3 - 1) + (j <= size * 2 / 3 - 1) + 1;
-			printf("%d,%d\n", x_section, y_section);
+			//printf("%d,%d\n", x_section, y_section);
 			val = 0;
 			//printf("dis:%d\n", dis);
 			switch (type)
