@@ -1,0 +1,1 @@
+gcc -o hoge .\main.c .\filter.c .\filter_processing.c .\make_filter.c .\fil_ave.c .\fil_ave_weighted.c .\fil_dif_lap.c .\fil_dif_prew.c .\fil_dif_sobel.c .\fil_sharpening.c -lm -lnetpbm
