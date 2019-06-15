@@ -9,8 +9,7 @@ double **filtering(gray **image, int cols, int rows, int filter_size, double **w
 
 	clip = filter_size / 2; //無視する広さ
 
-	/*
-	for (i = 0; i < filter_size; i++)
+		for (i = 0; i < filter_size; i++)
 	{
 		for (j = 0; j < filter_size; j++)
 		{
@@ -18,7 +17,6 @@ double **filtering(gray **image, int cols, int rows, int filter_size, double **w
 		}
 		printf("\n");
 	}
-	 */
 
 	filtered_img = calloc_d_matrix(rows, cols);
 
