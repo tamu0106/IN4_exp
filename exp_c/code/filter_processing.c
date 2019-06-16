@@ -24,7 +24,11 @@ gray **filter_processing(gray **image, int cols, int rows, int filter_size, int 
         break;
 
     case 10:
-        filtered_img = fil_dif_lap(image, cols, rows, filter_size);
+        filtered_img = fil_dif_lap(image, cols, rows, filter_size, 0);
+        break;
+
+    case 11:
+        filtered_img = fil_dif_lap(image, cols, rows, filter_size, 1);
         break;
 
     case 16: //4

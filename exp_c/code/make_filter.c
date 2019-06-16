@@ -132,7 +132,7 @@ double **make_filter(int size, int type, int sub_type)
 				break;
 
 			case 10:
-				//dif_lap
+				//dif_lap_4
 				if (dis == 0)
 				{
 					val = -4;
@@ -144,6 +144,18 @@ double **make_filter(int size, int type, int sub_type)
 				else
 				{
 					val = 0;
+				}
+				break;
+
+			case 10:
+				//dif_lap_8
+				if (dis == 0)
+				{
+					val = -8;
+				}
+				else
+				{
+					val = 1;
 				}
 				break;
 
