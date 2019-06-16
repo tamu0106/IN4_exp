@@ -53,7 +53,8 @@ int main(int argc, char *argv[])
     printf("Select Differential Filter Type.\n");
     printf("0.Operation Prewitt\n");
     printf("1.Operation Sobel\n");
-    printf("2.Laplacian Filter\n");
+    printf("2.Four directions Laplacian Filter\n");
+    printf("3.Eight directions Laplacian Filter\n");
     printf(">>");
 
     scanf("%d", &pattern);
