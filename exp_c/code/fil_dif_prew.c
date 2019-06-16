@@ -16,6 +16,9 @@ gray **fil_dif_prew(gray **image, int cols, int rows, int filter_size)
     yfiltered_img = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
 
     multi = 255 / (maxval - minval);
+    printf("max:%f\n", maxval);
+    printf("min:%f\n", minval);
+    printf("multi:%f\n", multi);
 
     for (y = 1; y < cols - 1; y++)
     {
