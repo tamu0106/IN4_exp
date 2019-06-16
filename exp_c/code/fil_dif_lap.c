@@ -24,6 +24,10 @@ gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size, int mode)
 
     multi = 255 / (maxval - minval);
     correct = fabs(minval * multi);
+    printf("max:%f\n", maxval);
+    printf("min:%f\n", minval);
+    printf("multi:%f\n", multi);
+    printf("correct:%f\n", correct);
 
     for (y = 1; y < cols - 1; y++)
     {
