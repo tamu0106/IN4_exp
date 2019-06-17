@@ -14,7 +14,7 @@ gray **fil_dif_sobel(gray **image, int cols, int rows, int filter_size)
 
     weight = make_filter(filter_size, 9, 1);
     yfiltered_img = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
-    multi = 510 / (maxval - minval);
+    multi = 255 / (maxval - minval);
 
     for (y = 1; y < cols - 1; y++)
     {
