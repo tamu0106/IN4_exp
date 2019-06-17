@@ -11,15 +11,14 @@ int main(int argc, char *argv[])
 
   //画像の読み込み
   file1 = fopen(argv[1], "rb");
-
   if (file1 == NULL)
   {
     printf("Cannot open image file.\nexit.\n");
     return -1;
   }
-
   printf("Log:file open\n");
 
+  //pgm読み込み
   image = pgm_readpgm(file1, &cols, &rows, &maxval);
   printf("Log:read pbm\n");
   fclose(file1);
@@ -36,7 +35,7 @@ int main(int argc, char *argv[])
   printf(">>");
 
   scanf("%d", &pattern);
-  
+
   switch (pattern)
   {
   case 0:
@@ -73,15 +72,14 @@ int main(int argc, char *argv[])
   //フィルタ処理
   answer = filter_processing(image, cols, rows, size, pattern);
 
-  
   printf("Select output.\n");
   printf("1.Write File\n");
   printf("2.Output Window\n");
   printf(">>");
 
   scanf("%d", &pattern);
-  
-  if (pattern==1)
+
+  if (pattern == 1)
   {
     printf("Filename?\n>>");
     scanf("%s", filename);
