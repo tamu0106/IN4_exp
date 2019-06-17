@@ -14,10 +14,7 @@ gray **fil_dif_sobel(gray **image, int cols, int rows, int filter_size)
 
     weight = make_filter(filter_size, 9, 1);
     yfiltered_img = filtering(image, cols, rows, filter_size, weight, &maxval, &minval);
-    multi = 255 / (maxval - minval);
-    printf("max:%f\n", maxval);
-    printf("min:%f\n", minval);
-    printf("multi:%f\n", multi);
+    multi = 510 / (maxval - minval);
 
     for (y = 1; y < cols - 1; y++)
     {
@@ -35,7 +32,7 @@ gray **fil_dif_sobel(gray **image, int cols, int rows, int filter_size)
                 yfiltered_img[y][x] = 255;
             }
 
-            filtered_img[y][x] = (unsigned int)hypot(xfiltered_img[y][x], yfiltered_img[y][x]);
+            filtered_img[y][x] = rounding(hypot(xfiltered_img[y][x], yfiltered_img[y][x]));
         }
     }
     free_d_matrix(weight, filter_size);

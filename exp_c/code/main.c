@@ -36,10 +36,10 @@ int main(int argc, char *argv[])
   printf(">>");
 
   scanf("%d", &pattern);
-  pattern += 255;
+  
   switch (pattern)
   {
-  case 255:
+  case 0:
     printf("Select Smoothing Filter Type.\n");
     printf("0.Smoothing Filter\n");
     printf("1.Weighted Smoothing filter\n");
@@ -49,18 +49,17 @@ int main(int argc, char *argv[])
     scanf("%d", &pattern);
     break;
 
-  case 256:
+  case 1:
     printf("Select Differential Filter Type.\n");
     printf("0.Operation Prewitt\n");
     printf("1.Operation Sobel\n");
-    printf("2.Four directions Laplacian Filter\n");
-    printf("3.Eight directions Laplacian Filter\n");
+    printf("2.Laplacian Filter\n");
     printf(">>");
 
     scanf("%d", &pattern);
     pattern += 8;
     break;
-  case 257:
+  case 2:
     printf("Select Sharpening Filter Type.\n");
     printf("0.Four directions Sharpening Filter\n");
     printf("1.Eight directions Sharpening Filter\n");
@@ -74,15 +73,15 @@ int main(int argc, char *argv[])
   //フィルタ処理
   answer = filter_processing(image, cols, rows, size, pattern);
 
-  /*
+  
   printf("Select output.\n");
   printf("1.Write File\n");
   printf("2.Output Window\n");
   printf(">>");
 
   scanf("%d", &pattern);
-  */
-  if (1)
+  
+  if (pattern==1)
   {
     printf("Filename?\n>>");
     scanf("%s", filename);

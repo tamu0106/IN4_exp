@@ -9,7 +9,7 @@ double **filtering(gray **image, int cols, int rows, int filter_size, double **w
 
 	clip = filter_size / 2; //無視する広さ
 
-		for (i = 0; i < filter_size; i++)
+	for (i = 0; i < filter_size; i++)
 	{
 		for (j = 0; j < filter_size; j++)
 		{
@@ -44,10 +44,6 @@ double **filtering(gray **image, int cols, int rows, int filter_size, double **w
 			}
 		}
 	}
-
-	//printf("uo2\n");
-	//printf("max:%f\n", *maxval);
-	//printf("min:%f\n", *minval);
 
 	return filtered_img;
 }

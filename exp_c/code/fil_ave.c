@@ -23,7 +23,7 @@ gray **fil_ave(gray **image, int cols, int rows, int filter_size)
             {
                 tmp[y][x] = 255;
             }
-            filtered_img[y][x] = (unsigned int)tmp[y][x];
+            filtered_img[y][x] = rounding(tmp[y][x]);
         }
     }
 
