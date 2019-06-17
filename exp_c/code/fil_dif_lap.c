@@ -1,7 +1,7 @@
 #include "temp.h"
 
 //ラプラシアンフィルタ
-gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size)
+gray **fil_dif_lap(gray **image, int cols, int rows, int filter_size, int mode)
 {
     int x, y;
     double **tmp, **weight, multi, correct, maxval = 0, minval = 255;
