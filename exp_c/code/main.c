@@ -93,7 +93,7 @@ int main(int argc, char *argv[])
   }
   else
   {
-    // mono_view(answer, cols, rows, maxval);
+    mono_view(answer, cols, rows, maxval);
   }
 
   free_g_matrix(answer, cols);

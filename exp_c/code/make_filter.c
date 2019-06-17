@@ -6,16 +6,12 @@ double **make_filter(int size, int type, int sub_type)
 	int i, j, dis, x_section, y_section, cnt = 0;
 	double **pattern, val = 0;
 
-	//printf("size:%d\n", size);
-
 	pattern = calloc_d_matrix(size, size);
 
 	for (i = 0; i < size; i++)
 	{
-		//printf("%d ",i);
 		for (j = 0; j < size; j++)
 		{
-			//printf("%d\n", j);
 			dis = abs(i - size / 2) + abs(j - size / 2); //中心からの距離
 
 			//3*3に均等に割った範囲でどれに属する座標か
@@ -25,9 +21,7 @@ double **make_filter(int size, int type, int sub_type)
 			//3,1 2,1 1,1
 			x_section = (i <= size / 3 - 1) + (i <= size * 2 / 3 - 1) + 1;
 			y_section = (j <= size / 3 - 1) + (j <= size * 2 / 3 - 1) + 1;
-			//printf("%d,%d\n", x_section, y_section);
 			val = 0;
-			//printf("dis:%d\n", dis);
 			switch (type)
 			{
 			case 0:
@@ -193,12 +187,10 @@ double **make_filter(int size, int type, int sub_type)
 				exit(-1);
 			}
 
-			//printf("val:%f\n", val);
 			pattern[i][j] = val;
 		}
 	}
 
-	//printf("cnt:%d\n", cnt);
 	if (type < 8 && type >= 0)
 	{
 		for (i = 0; i < size; i++)
@@ -206,9 +198,7 @@ double **make_filter(int size, int type, int sub_type)
 			for (j = 0; j < size; j++)
 			{
 				pattern[i][j] /= (double)cnt;
-				//printf("%f ", pattern[i][j]);
 			}
-			//printf("\n");
 		}
 	}
 
